@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { Component, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -8,6 +8,7 @@ import Root from './Layout/Root.jsx';
 import Home from './Components/Home/Home.jsx';
 import LogIn from './Components/LogIn/LogIn.jsx';
 import Register from './Register/Register.jsx';
+import SignUp from './Components/SignUp/Signup.jsx';
 
 
 const router = createBrowserRouter([
@@ -20,13 +21,17 @@ const router = createBrowserRouter([
         Component: Home
       },
       {path: 'login', Component: LogIn},
-      { path: "register", Component: Register}
+      { path: "Register", Component: Register},
+      {
+        path: 'SignUp', 
+        Component: SignUp
+      }
     ]
   },
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-<RouterProvider router={router} />,
+<RouterProvider router={router} />
 <App></App>
   </StrictMode>,
 )
